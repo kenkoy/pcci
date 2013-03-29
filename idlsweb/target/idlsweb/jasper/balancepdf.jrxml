@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="entriesconverted" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fc66e12-6bbb-4217-b307-71964fc41d99">
+	<property name="ireport.zoom" value="0.9330147604194667"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/Users/ninoestole/Documents/03_Programming/iReport/"]]></defaultValueExpression>
+	</parameter>
+	<field name="accountName" class="java.lang.String"/>
+	<field name="accountCode" class="java.lang.String"/>
+	<field name="lstIMATrxEntries" class="java.util.List"/>
+	<field name="totalDebit" class="java.math.BigDecimal"/>
+	<field name="totalCredit" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3f02f8c7-f883-4601-be52-6311de98471c" style="Title" x="3" y="4" width="262" height="54"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Accounts Ledger]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d0326053-4c6f-4226-9c45-1093e665e2c4" x="4" y="1" width="90" height="30"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Account Name]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f0384756-2c48-4c08-b5d7-054f5fde1a90" x="100" y="1" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{accountName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="404ed120-b278-4706-b622-d7a2c6254991" x="4" y="33" width="90" height="30"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Account Code]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d2642834-0a8d-4bb5-b60d-342bcca0ab2f" x="100" y="33" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{accountCode}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="fe597d04-ce32-4f99-9987-f19169e52431" x="4" y="67" width="787" height="41"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstIMATrxEntries})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["balancepdf_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="592132f7-6e0c-4a14-9528-bbe8cc702a67" style="Column header" x="682" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="c544b90f-0bc6-405a-a796-bc6d2328e144" style="Column header" x="762" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="f173f74b-d144-401f-ad56-2c29eee693f5" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

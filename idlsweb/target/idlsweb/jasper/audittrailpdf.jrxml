@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="audittrail" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" whenResourceMissingType="Empty" uuid="d0bf808f-1b55-4cd7-a48d-da6ebfb3ad3a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="userId" class="java.lang.String"/>
+	<field name="date" class="java.util.Date"/>
+	<field name="module" class="java.lang.String"/>
+	<field name="keyValue" class="java.lang.String"/>
+	<field name="transactionType" class="java.lang.String"/>
+	<field name="newValue" class="java.lang.String"/>
+	<field name="oldValue" class="java.lang.String"/>
+	<field name="fieldName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="23928c2d-ca67-45f2-a492-768597e3253a" style="Title" x="2" y="6" width="200" height="54"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Audit Trail]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c4fbee39-830b-4067-85e7-9896c20e79c3" x="2" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[User Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ff9ceaf-67b3-4d7d-8675-9636e63b34e6" x="102" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0fe64e19-b307-4165-b6c8-fd1c4e9b0d27" x="202" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Module]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70bd85af-dbc4-4524-b0ec-e37bc04684e5" x="302" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Key Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08f46114-9126-4507-8706-be4e27a95357" x="402" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Transaction Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="19ee209e-f524-4e63-98a1-189bdeca6cfc" x="502" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[New Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3b4ff62a-a1b6-4733-8d5c-32909e60042c" x="602" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Old Value]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c03d9405-97bb-4a84-8b4b-3321441ee18f" x="702" y="2" width="90" height="30"/>
+				<textElement/>
+				<text><![CDATA[Field Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="e18666b9-f560-461f-a31b-a39ed042594f" x="2" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{userId}]]></textFieldExpression>
+			</textField>
+			<textField pattern="d-MMM-yy" isBlankWhenNull="true">
+				<reportElement uuid="74525905-f636-4aca-85f6-3c82016a00ef" x="102" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="25f8fcc5-4eaf-40e8-a5fc-cc3c2f1d0f39" x="202" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{module}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="3499568e-09cd-4e1b-8e5a-68692d7adf63" x="302" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{keyValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d60004bb-4696-4c2a-87ed-0cd12f61b4af" x="402" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{transactionType}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="95632217-05a2-459c-b53f-0af65458f42a" x="502" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{newValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="6a585f54-ecf1-4a90-9c54-97a7116c9b05" x="602" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{oldValue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="55eb2705-d9fe-46bb-9bfe-0119545ddcb6" x="702" y="3" width="90" height="30"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fieldName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="9d14de93-193d-4f7f-a36f-bfbc0b97894d" style="Column header" x="682" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="dffd9877-b034-4ecf-96b9-832b03883b2e" style="Column header" x="762" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="94a59494-6ea6-4e2e-9e28-28dae6bc8011" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

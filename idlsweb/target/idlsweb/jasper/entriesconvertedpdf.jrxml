@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="entriesconverted" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fc66e12-6bbb-4217-b307-71964fc41d99">
+	<property name="ireport.zoom" value="1.2722928551174548"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="trxDate" class="java.util.Date"/>
+	<field name="trxType" class="java.lang.String"/>
+	<field name="trxRefNo" class="java.lang.String"/>
+	<field name="trxDesc" class="java.lang.String"/>
+	<field name="trxIMAAcctCode" class="java.lang.String"/>
+	<field name="trxDebit" class="java.math.BigDecimal"/>
+	<field name="trxCredit" class="java.math.BigDecimal"/>
+	<variable name="totalDebit" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{trxDebit}]]></variableExpression>
+	</variable>
+	<variable name="totalCredit" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{trxCredit}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3f02f8c7-f883-4601-be52-6311de98471c" style="Title" x="7" y="6" width="256" height="58"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Entries Converted]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a3eaf3fa-de6d-48fe-8209-0f3ffedf7c20" x="9" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="70d5e42e-bc83-4818-a933-19b7ee3fdab5" x="123" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Transaction Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7c548381-7100-46e4-9a3a-ae3e1076345c" x="237" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Reference/TO No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="12647c06-d26c-4121-ad9e-d994e24090d6" x="351" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3ef9d340-4f66-4f01-bea7-50809fd6a93d" x="465" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Account Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d58690f7-081b-4530-904a-cf8761103587" x="579" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Debit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b950ddf6-d0a8-4459-96af-5d5e676c16cc" x="693" y="7" width="90" height="25"/>
+				<textElement/>
+				<text><![CDATA[Credit]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField pattern="d-MMM-yy" isBlankWhenNull="true">
+				<reportElement uuid="990f0c65-541e-4bcf-a206-e47f95ad6e9d" x="9" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxDate}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="75ce905e-bfbf-445e-86eb-b52e378be058" x="123" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxType}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="5ea29369-b85f-4ff0-9773-6713858793fc" x="237" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxRefNo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="d-MMM-yy" isBlankWhenNull="true">
+				<reportElement uuid="3d7d5db3-9ebe-413a-896a-4c540b70c31a" stretchType="RelativeToTallestObject" x="351" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxDesc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="903d2d9c-b1a4-4331-bce0-ddd5e7df5b53" x="465" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxIMAAcctCode}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="dc106278-a55d-497e-ac7f-65c64eda0e2a" x="579" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxDebit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement uuid="c04fbb40-5b41-4485-9d25-19e049006025" x="693" y="7" width="90" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{trxCredit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="40" splitType="Stretch">
+			<textField pattern="#,##0.00">
+				<reportElement uuid="ecd22548-08ef-4571-958f-36b53ac8b322" x="579" y="6" width="90" height="34"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{totalDebit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="883d6c99-dc8f-4bcb-804f-1827e202d312" x="693" y="6" width="90" height="34"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{totalCredit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="714c18a8-d2eb-4a82-9adf-54be34ad5681" x="8" y="5" width="114" height="29"/>
+				<textElement/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement uuid="592132f7-6e0c-4a14-9528-bbe8cc702a67" style="Column header" x="696" y="5" width="59" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="c544b90f-0bc6-405a-a796-bc6d2328e144" style="Column header" x="760" y="5" width="23" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="f173f74b-d144-401f-ad56-2c29eee693f5" style="Column header" x="8" y="5" width="114" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

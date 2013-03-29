@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Entries Processed</title>
+	<link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body style="background-color: #93AE93;">
+	<h:form id="main">
+		<p:panel header="Entries Processed Report" style="margin-bottom:10px;">
+			<p:panelGrid columns="2" cellspacing="5" cellpadding="5" style="width:400; height:150;">
+			
+				<h:outputLabel for="startDate" value="Start Date: " />
+				<p:calendar value="#{reportBean.startDate}" id="startDate" />
+				
+				<h:outputLabel for="endDate" value="End Date: " />  
+				<p:calendar value="#{reportBean.endDate}" id="endDate" />
+				
+			</p:panelGrid>
+			<f:facet name="footer" style="width:400; height:100;">
+				<p:commandButton value="Generate"
+					action="#{reportBean.executeReport}"
+					ajax="false" icon="ui-icon-create" >
+					<f:setPropertyActionListener target="#{reportBean.reportTitle}" value="ENTRIESPROCESSED" />
+				</p:commandButton>
+			</f:facet>
+		</p:panel>
+		
+		<p:panel header="Result" style="margin-bottom:10px;" >
+			<p:dataTable id="imaTrxEntries" var="imaTrxEntries"
+				value="#{reportBean.lstIMATrxEntries}" paginator="true" rows="15" style="width: 100%" paginatorPosition="top">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Date" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDate}">
+						<f:convertDateTime pattern="MM/dd/yyyy" dateStyle="short" timeZone="GMT+8" type="date"/>
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Transaction Type" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxType}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Reference/TO No." />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxRefNo}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Description" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDesc}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Account Code" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxIMAAcctCode}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Debit" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDebit}">
+						<f:convertNumber minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Credit" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxCredit}">
+						<f:convertNumber minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
+				
+				<p:columnGroup type="footer">  
+		            <p:row>  
+		                <p:column colspan="5" footerText="Total"  
+		                                style="text-align:left"  />  
+		                <p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalDebit)}" />  
+		                <p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalCredit)}" />  
+		            </p:row>  
+		        </p:columnGroup>
+				
+			</p:dataTable>
+		</p:panel>
+		
+		<p:panel header="Export Data" style="margin-bottom:10px;">
+			<h:commandLink action="#{reportBean.XLSX}">
+				<p:graphicImage value="/images/xls.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.PDF}">
+				<p:graphicImage value="/images/pdf.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.CSV}">
+				<p:graphicImage value="/images/csv.png" />
+			</h:commandLink>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jstl/core"
+	>
+
+<h:head>
+	<title>Audit Trail</title>
+	<link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body style="background-color: #93AE93;">
+	<h:form id="main">
+		<p:panel header="Audit Trail Report" style="margin-bottom:10px;">
+			<p:panelGrid columns="2" cellspacing="5" cellpadding="5" style="width:400; height:150;">
+			
+				<h:outputLabel for="inUserId" value="User Id: " />  
+            	<p:inputText id="inUserId" value="#{reportBean.userId}"/>
+            	
+				<h:outputLabel for="startDate" value="Start Date: " />
+				<p:calendar value="#{reportBean.startDate}" id="startDate" />
+				
+				<h:outputLabel for="endDate" value="End Date: " />  
+				<p:calendar value="#{reportBean.endDate}" id="endDate" />
+				
+				<h:outputLabel for="module" value="Module: " />  
+				<p:inputText value="#{reportBean.module}" id="module" />
+			</p:panelGrid>
+			<f:facet name="footer" style="width:400; height:100;">
+				<p:commandButton value="Generate"
+					action="#{reportBean.executeReport}"
+					ajax="false" icon="ui-icon-create" >
+					<f:setPropertyActionListener target="#{reportBean.reportTitle}" value="AUDITTRAIL" />
+				</p:commandButton>
+			</f:facet>
+		</p:panel>
+		
+		<p:panel header="Result" style="margin-bottom:10px;" >
+			<p:dataTable id="auditTrail" var="auditTrail"
+				value="#{reportBean.lstAuditTrail}" paginator="true" rows="15" style="width: 100%" paginatorPosition="top">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="User Id" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.userId}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Date" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.date}">
+						<f:convertDateTime pattern="MM/dd/yyyy" dateStyle="short" timeZone="GMT+8" type="date"/>
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Module" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.module}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Key Value" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.keyValue}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Transaction Type" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.transactionType}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="New Value" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.newValue}" rendered="#{auditTrail.fieldName ne 'PWORD'}" />
+					<h:outputText value="********" rendered="#{auditTrail.fieldName eq 'PWORD'}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Old Value" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.oldValue}" rendered="#{auditTrail.fieldName ne 'PWORD'}" />
+					<h:outputText value="********" rendered="#{auditTrail.fieldName eq 'PWORD'}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Field Name" />
+					</f:facet>
+					<h:outputText value="#{auditTrail.fieldName}" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+		<p:panel header="Export Data" style="margin-bottom:10px;">
+			<h:commandLink action="#{reportBean.XLSX}">
+				<p:graphicImage value="/images/xls.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.PDF}">
+				<p:graphicImage value="/images/pdf.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.CSV}">
+				<p:graphicImage value="/images/csv.png" />
+			</h:commandLink>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

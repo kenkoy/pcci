@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Balance</title>
+	<link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body style="background-color: #93AE93;">
+	<h:form id="main">
+		<p:panel header="Balance Report" style="margin-bottom:10px;">
+			<p:panelGrid columns="2" cellspacing="5" cellpadding="5" style="width:400; height:150;">
+			
+				<h:outputLabel for="startDate" value="Start Date: " />
+				<p:calendar value="#{reportBean.startDate}" id="startDate" />
+				
+				<h:outputLabel for="endDate" value="End Date: " />  
+				<p:calendar value="#{reportBean.endDate}" id="endDate" />
+				
+			</p:panelGrid>
+			<f:facet name="footer" style="width:400; height:100;">
+				<p:commandButton value="Generate"
+					action="#{reportBean.executeReport}"
+					ajax="false" icon="ui-icon-create" >
+					<f:setPropertyActionListener target="#{reportBean.reportTitle}" value="BALANCE" />
+				</p:commandButton>
+			</f:facet>
+		</p:panel>
+		
+		<p:panel header="Result" style="margin-bottom:10px;" >
+			<p:dataTable id="imaAccounts" var="imaAccounts"
+				value="#{reportBean.lstAccountGrp}" paginator="true" rows="5" style="width: 100%" paginatorPosition="top">
+				
+				<p:columnGroup type="header">  
+		            <p:row>
+		            	<p:column headerText="Date " />
+		            	<p:column headerText="Transaction Type " />
+		            	<p:column headerText="Reference/TO No. " />
+		            	<p:column headerText="Debit " />
+		            	<p:column headerText="Credit " /> 
+		            </p:row>  
+		        </p:columnGroup>
+				
+				<p:subTable var="entries" value="#{imaAccounts.lstIMATrxEntries}">  
+					<f:facet name="header">  
+		             	<div>
+		             		<h:outputLabel for="accountName" value="Account Name: " />
+		             		<h:outputText id="accountName" value="#{imaAccounts.accountName}" />   
+		            	</div>
+		            	<div>
+		            		<h:outputLabel for="accountCode" value="Account Code: " />
+		             		<h:outputText id="accountCode" value="#{imaAccounts.accountCode}" /> 
+		            	</div>
+		            </f:facet>
+		            <p:column>  
+		                <h:outputText value="#{entries.trxDate}" >
+		                	<f:convertDateTime pattern="MM/dd/yyyy" dateStyle="short" timeZone="GMT+8" type="date"/>
+		                </h:outputText>
+		            </p:column>  
+		            <p:column>  
+		                <h:outputText value="#{entries.trxType}" />
+		            </p:column>  
+		            <p:column>  
+		            	<h:outputText value="#{entries.trxRefNo}" />
+		            </p:column>  
+		  			<p:column>  
+		            	<h:outputText value="#{entries.trxDebit}" >
+		            		<f:convertNumber minFractionDigits="2" />
+		            	</h:outputText>
+		            </p:column>
+		            <p:column>  
+		            	<h:outputText value="#{entries.trxCredit}" >
+		            		<f:convertNumber minFractionDigits="2" />
+		            	</h:outputText>
+		            </p:column>
+		            <p:columnGroup type="footer">  
+		                <p:row>  
+		                    <p:column footerText="Total " colspan="3" style="text-align:left"/>  
+		                    <p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalDebit)}" />  
+		               	 	<p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalCredit)}" />  
+		               	</p:row>
+		               	<p:row>
+		               		<p:column footerText="Net Movement* " colspan="3" style="text-align:left"/>
+		               		<p:column footerText="" />
+		               		<p:column footerText="#{imaAccounts.netMovement}" />  
+		               	</p:row>  
+		            </p:columnGroup>  
+		        </p:subTable>
+			</p:dataTable>
+		</p:panel>
+		<p:panel header="Export Data" style="margin-bottom:10px;">
+			<h:commandLink action="#{reportBean.XLSX}">
+				<p:graphicImage value="/images/xls.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.PDF}">
+				<p:graphicImage value="/images/pdf.png" />
+			</h:commandLink>
+			<h:commandLink action="#{reportBean.CSV}">
+				<p:graphicImage value="/images/csv.png" />
+			</h:commandLink>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

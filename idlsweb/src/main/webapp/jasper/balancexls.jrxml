@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="balance" pageWidth="842" pageHeight="100000000" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6fc66e12-6bbb-4217-b307-71964fc41d99">
+	<property name="isIgnorePagination" value="true"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<field name="accountName" class="java.lang.String"/>
+	<field name="accountCode" class="java.lang.String"/>
+	<field name="lstIMATrxEntries" class="java.util.List"/>
+	<field name="totalDebit" class="java.math.BigDecimal"/>
+	<field name="totalCredit" class="java.math.BigDecimal"/>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="3f02f8c7-f883-4601-be52-6311de98471c" style="Title" x="0" y="0" width="320" height="70"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Accounts Ledger]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="d0326053-4c6f-4226-9c45-1093e665e2c4" x="0" y="0" width="160" height="19"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Account Name]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="f0384756-2c48-4c08-b5d7-054f5fde1a90" x="160" y="0" width="160" height="19"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{accountName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="404ed120-b278-4706-b622-d7a2c6254991" x="38" y="19" width="160" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Account Code]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="d2642834-0a8d-4bb5-b60d-342bcca0ab2f" x="160" y="19" width="160" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{accountCode}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="fe0b4ab8-fcef-41ba-b4ec-57fb63c6f77e" x="0" y="39" width="802" height="52"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstIMATrxEntries})]]></dataSourceExpression>
+				<subreportExpression><![CDATA["balancexls_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50"/>
+	</columnFooter>
+</jasperReport>

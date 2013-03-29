@@ -1,0 +1,105 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Accounts</title>
+	<link href="${facesContext.externalContext.requestContextPath}/css/style.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body style="background-color: #93AE93;">
+<h:form id="main">
+		<p:panel header="Result" style="margin-bottom:10px;" >
+			<p:dataTable id="imaTrxEntries" var="imaTrxEntries"
+				value="#{reportBean.lstIMATrxEntries}" paginator="true" rows="15" style="width: 100%" paginatorPosition="top" >
+				    
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Account Name " />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDesc}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Account Code" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxIMAAcctCode}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Date" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDate}" >
+						<f:convertDateTime pattern="MM/dd/yyyy" dateStyle="short" timeZone="GMT+8" type="date"/>
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Transaction Type" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxType}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Reference/TO No." />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxRefNo}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Debit" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxDebit}" >
+						<f:convertNumber minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Credit" />
+					</f:facet>
+					<h:outputText value="#{imaTrxEntries.trxCredit}" >
+						<f:convertNumber minFractionDigits="2" />
+					</h:outputText>
+				</p:column>
+				
+				<p:columnGroup type="footer">  
+		            <p:row>  
+		                <p:column colspan="5" footerText="Total"  
+		                                style="text-align:left"  />  
+		                <p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalDebit)}" />  
+		                <p:column footerText="#{reportBean.getDecimalFormat('###,###.00',reportBean.totalCredit)}" />  
+		            </p:row>  
+		        </p:columnGroup>
+			</p:dataTable>
+			<div style="width: 100%; align:left;">
+				<f:facet name="footer" style="width:400; height:100;">
+					<p:commandButton value="Back"
+						action="#{reportBean.executeReport}"
+						ajax="false" icon="ui-icon-create" >
+						<f:setPropertyActionListener target="#{reportBean.reportTitle}" value="BALANCE" />
+					</p:commandButton>
+				</f:facet>	
+		 	</div>
+		</p:panel>
+		<p:panel header="Export Data" style="margin-bottom:10px;">
+			<h:commandLink>
+				<p:graphicImage value="/images/excel.png" />
+				<p:dataExporter type="xls" target="imaTrxEntries" fileName="balanceReportPerDate" postProcessor="#{reportBean.postProcessXLS}" />
+			</h:commandLink>
+			<h:commandLink>
+				<p:graphicImage value="/images/pdf.png" />
+				<p:dataExporter type="pdf" target="imaTrxEntries" fileName="balanceReportPerDate" postProcessor="#{reportBean.postProcessPDF}" />
+			</h:commandLink>
+			<h:commandLink>
+				<p:graphicImage value="/images/csv.png" />
+				<p:dataExporter type="csv" target="imaTrxEntries" fileName="balanceReportPerDate" />
+			</h:commandLink>
+			<h:commandLink>
+				<p:graphicImage value="/images/xml.png" />
+				<p:dataExporter type="xml" target="imaTrxEntries" fileName="balanceReportPerDate" />
+			</h:commandLink>
+		</p:panel>
+	</h:form>	
+	
+</h:body>
+</html>
