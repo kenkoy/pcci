@@ -8,6 +8,6 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-    <!-- Branching -->
+    <!-- Branching 01 -->
   </welcome-file-list>
 </web-app>
