@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="servicerequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="AccountService"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AccountService">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transaction"/>
+        <xs:element ref="IMA_AcctCode"/>
+        <xs:element ref="IMA_AcctDesc"/>
+        <xs:element ref="IMA_AcctNormalBal"/>
+        <xs:element ref="IMA_AcctReptName"/>
+        <xs:element ref="IFMS_BasedID"/>
+        <xs:element ref="IFMS_BasedName"/>
+        <xs:element ref="LastUserCode"/>
+        <xs:element ref="LastUpdate"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type"/>
+        <xs:element ref="sessionid"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="sessionid" type="xs:NCName"/>
+  <xs:element name="IMA_AcctCode" type="xs:NCName"/>
+  <xs:element name="IMA_AcctDesc" type="xs:NCName"/>
+  <xs:element name="IMA_AcctNormalBal" type="xs:NCName"/>
+  <xs:element name="IMA_AcctReptName" type="xs:NCName"/>
+  <xs:element name="IFMS_BasedID" type="xs:NCName"/>
+  <xs:element name="IFMS_BasedName" type="xs:NCName"/>
+  <xs:element name="LastUserCode" type="xs:NCName"/>
+  <xs:element name="LastUpdate" type="xs:NCName"/>
+</xs:schema>

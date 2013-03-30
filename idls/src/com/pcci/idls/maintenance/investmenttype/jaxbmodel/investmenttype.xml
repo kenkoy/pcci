@@ -1,0 +1,131 @@
+<!--  
+Table Mapped: IMA_Trust_Investments
+Columns
+InvestmentType
+InvestmentDesc
+InvestmentCode
+LastUserCode
+LastUpdate
+-->
+
+<!-- CREATE -->
+<servicerequest>
+	<InvestmentTypeService>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<InvestmentType>Required</InvestmentType>
+		<InvestmentDesc>Required</InvestmentDesc>
+		<InvestmentCode>Required</InvestmentCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</InvestmentTypeService>
+</servicerequest>
+
+
+<!-- RETRIEVE -->
+<servicerequest>
+	<InvestmentTypeService>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<InvestmentType></InvestmentType>
+		<InvestmentDesc></InvestmentDesc>
+		<InvestmentCode></InvestmentCode>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</InvestmentTypeService>
+</servicerequest>
+<!-- response -->
+<serviceresponse>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<investmenttypes>
+			<investmenttype>
+				<InvestmentType>Some string</InvestmentType>
+				<InvestmentDesc>Some string</InvestmentDesc>
+				<InvestmentCode>Some string</InvestmentCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</investmenttype>
+			<investmenttype>
+				<InvestmentType>Some string</InvestmentType>
+				<InvestmentDesc>Some string</InvestmentDesc>
+				<InvestmentCode>Some string</InvestmentCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</investmenttype>
+		</investmenttypes>
+</serviceresponse>
+
+<!-- RETRIEVE by investment desc-->
+<servicerequest>
+	<InvestmentTypeService>
+		<transaction>
+			<type>read</type>
+			<sessionid></sessionid>
+		</transaction>
+		<InvestmentType></InvestmentType>
+		<InvestmentDesc>Required</InvestmentDesc>
+		<InvestmentCode></InvestmentCode>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</InvestmentTypeService>
+</servicerequest>
+<!-- response -->
+<serviceresponse>
+		<transaction>
+			<type>read</type>
+			<sessionid></sessionid>
+		</transaction>
+		<investmenttypes>
+			<investmenttype>
+				<InvestmentType>Some string</InvestmentType>
+				<InvestmentDesc>Some string</InvestmentDesc>
+				<InvestmentCode>Some string</InvestmentCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</investmenttype>
+			<investmenttype>
+				<InvestmentType>Some string</InvestmentType>
+				<InvestmentDesc>Some string</InvestmentDesc>
+				<InvestmentCode>Some string</InvestmentCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</investmenttype>
+		</investmenttypes>
+</serviceresponse>
+
+<!-- UPDATE -->
+<servicerequest>
+	<InvestmentTypeService>
+		<transaction>
+			<type>update</type>
+			<sessionid></sessionid>
+		</transaction>
+		<InvestmentType>Required</InvestmentType>
+		<InvestmentDesc>Required</InvestmentDesc>
+		<InvestmentCode>Required</InvestmentCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</InvestmentTypeService>
+</servicerequest>
+
+<!-- DELETE -->
+<servicerequest>
+	<InvestmentTypeService>
+		<transaction>
+			<type>delete</type>
+			<sessionid></sessionid>
+		</transaction>
+		<InvestmentType>Required</InvestmentType>
+		<InvestmentDesc></InvestmentDesc>
+		<InvestmentCode></InvestmentCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</InvestmentTypeService>
+</servicerequest>

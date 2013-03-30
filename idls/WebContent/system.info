@@ -1,0 +1,4 @@
+JDBC
+-Spring ORM, Java DB objects are persisted using JPA with Hibernate as the engine.
+
+ 

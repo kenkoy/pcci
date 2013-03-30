@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serviceresponse>
+	<status>
+		<code>OK</code>
+		<message>OK</message>
+	</status>
+	<configuration>
+		<transaction>
+			<type>Configuration</type>
+			<sessionid>No session ID</sessionid>
+		</transaction>
+		<uiconfig>
+		</uiconfig>	
+	</configuration>
+</serviceresponse>

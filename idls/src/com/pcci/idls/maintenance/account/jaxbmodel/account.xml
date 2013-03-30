@@ -1,0 +1,157 @@
+
+	<!--
+		Table Mapped: IMA_Accounts Columns IMA_AcctCode IMA_AcctDesc
+		IMA_AcctNormalBal IMA_AcctReptName IFMS_BasedID IFMS_BasedName
+		LastUserCode LastUpdate
+	-->
+
+	<!-- CREATE -->
+<servicerequest>
+	<AccountService>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_AcctCode>Required</IMA_AcctCode>
+		<IMA_AcctDesc>Required</IMA_AcctDesc>
+		<IMA_AcctNormalBal>Required</IMA_AcctNormalBal>
+		<IMA_AcctReptName>Required</IMA_AcctReptName>
+		<IFMS_BasedID>Required</IFMS_BasedID>
+		<IFMS_BasedName>Required</IFMS_BasedName>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</AccountService>
+</servicerequest>
+
+
+	<!-- RETRIEVE -->
+<servicerequest>
+	<AccountService>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_AcctCode></IMA_AcctCode>
+		<IMA_AcctDesc></IMA_AcctDesc>
+		<IMA_AcctNormalBal></IMA_AcctNormalBal>
+		<IMA_AcctReptName></IMA_AcctReptName>
+		<IFMS_BasedID></IFMS_BasedID>
+		<IFMS_BasedName></IFMS_BasedName>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</AccountService>
+</servicerequest>
+	<!-- response -->
+<serviceresponse>
+	<transaction>
+		<type>readall</type>
+		<sessionid></sessionid>
+	</transaction>
+	<accounts>
+		<account>
+			<IMA_AcctCode>Some string</IMA_AcctCode>
+			<IMA_AcctDesc>Some string</IMA_AcctDesc>
+			<IMA_AcctNormalBal>Some string</IMA_AcctNormalBal>
+			<IMA_AcctReptName>Some string</IMA_AcctReptName>
+			<IFMS_BasedID>Some string</IFMS_BasedID>
+			<IFMS_BasedName>Some string</IFMS_BasedName>
+			<LastUserCode>Some string</LastUserCode>
+			<LastUpdate>Some string</LastUpdate>
+		</account>
+		<account>
+			<IMA_AcctCode>Some string</IMA_AcctCode>
+			<IMA_AcctDesc>Some string</IMA_AcctDesc>
+			<IMA_AcctNormalBal>Some string</IMA_AcctNormalBal>
+			<IMA_AcctReptName>Some string</IMA_AcctReptName>
+			<IFMS_BasedID>Some string</IFMS_BasedID>
+			<IFMS_BasedName>Some string</IFMS_BasedName>
+			<LastUserCode>Some string</LastUserCode>
+			<LastUpdate>Some string</LastUpdate>
+		</account>
+	</accounts>
+</serviceresponse>
+
+	<!-- RETRIEVE by acct desc -->
+<servicerequest>
+	<AccountService>
+		<transaction>
+			<type>read</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_AcctCode></IMA_AcctCode>
+		<IMA_AcctDesc>Required</IMA_AcctDesc>
+		<IMA_AcctNormalBal></IMA_AcctNormalBal>
+		<IMA_AcctReptName></IMA_AcctReptName>
+		<IFMS_BasedID></IFMS_BasedID>
+		<IFMS_BasedName></IFMS_BasedName>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</AccountService>
+</servicerequest>
+	<!-- response -->
+<serviceresponse>
+	<transaction>
+		<type>read</type>
+		<sessionid></sessionid>
+	</transaction>
+	<accounts>
+		<account>
+			<IMA_AcctCode>Some string</IMA_AcctCode>
+			<IMA_AcctDesc>Some string</IMA_AcctDesc>
+			<IMA_AcctNormalBal>Some string</IMA_AcctNormalBal>
+			<IMA_AcctReptName>Some string</IMA_AcctReptName>
+			<IFMS_BasedID>Some string</IFMS_BasedID>
+			<IFMS_BasedName>Some string</IFMS_BasedName>
+			<LastUserCode>Some string</LastUserCode>
+			<LastUpdate>Some string</LastUpdate>
+		</account>
+		<account>
+			<IMA_AcctCode>Some string</IMA_AcctCode>
+			<IMA_AcctDesc>Some string</IMA_AcctDesc>
+			<IMA_AcctNormalBal>Some string</IMA_AcctNormalBal>
+			<IMA_AcctReptName>Some string</IMA_AcctReptName>
+			<IFMS_BasedID>Some string</IFMS_BasedID>
+			<IFMS_BasedName>Some string</IFMS_BasedName>
+			<LastUserCode>Some string</LastUserCode>
+			<LastUpdate>Some string</LastUpdate>
+		</account>
+	</accounts>
+</serviceresponse>
+
+
+
+	<!-- UPDATE -->
+<servicerequest>
+	<AccountService>
+		<transaction>
+			<type>update</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_AcctCode>Required</IMA_AcctCode>
+		<IMA_AcctDesc>Required</IMA_AcctDesc>
+		<IMA_AcctNormalBal>Required</IMA_AcctNormalBal>
+		<IMA_AcctReptName>Required</IMA_AcctReptName>
+		<IFMS_BasedID>Required</IFMS_BasedID>
+		<IFMS_BasedName>Required</IFMS_BasedName>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</AccountService>
+</servicerequest>
+
+<!-- DELETE -->
+<servicerequest>
+	<AccountService>
+		<transaction>
+			<type>delete</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_AcctCode>Required</IMA_AcctCode>
+		<IMA_AcctDesc></IMA_AcctDesc>
+		<IMA_AcctNormalBal></IMA_AcctNormalBal>
+		<IMA_AcctReptName></IMA_AcctReptName>
+		<IFMS_BasedID></IFMS_BasedID>
+		<IFMS_BasedName></IFMS_BasedName>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</AccountService>
+</servicerequest>

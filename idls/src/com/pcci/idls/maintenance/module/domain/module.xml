@@ -1,0 +1,66 @@
+<servicerequest>
+	<module>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<id>USER_MAINTENANCE</id>
+		<description>User data maintenance</description>
+		<effectivedate>11/13/2011</effectivedate>
+		<expirydate>11/13/2012</expirydate>
+		<lastupdate></lastupdate>
+		<modifiedby>Marcus</modifiedby>
+	</module>
+</servicerequest>
+<!-- 
+<serviceresponse>
+	<modules>
+		<module>
+			<transaction>
+				<type>create</type>
+				<sessionid></sessionid>
+			</transaction>
+			<id>USER_MAINTENANCE</id>
+			<description>User data maintenance</description>
+			<effectivedate>11/13/2011</effectivedate>
+			<expirydate>11/13/2012</expirydate>
+			<lastupdate></lastupdate>
+			<modifiedby>Marcus</modifiedby>
+		</module>		
+	</modules>
+</serviceresponse>
+
+
+
+
+<servicerequest>
+	<module>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<id>ACCOUNT_MAINTENANCE</id>
+		<description>Account maintenance</description>
+		<effectivedate>11/13/2011</effectivedate>
+		<expirydate>11/13/2012</expirydate>
+		<lastupdate></lastupdate>
+		<modifiedby>Marcus</modifiedby>
+	</module>
+</servicerequest>
+
+
+<servicerequest>
+	<module>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<id>DATA_TRANSFER</id>
+		<description>Data migration</description>
+		<effectivedate>11/13/2011</effectivedate>
+		<expirydate>11/13/2012</expirydate>
+		<lastupdate></lastupdate>
+		<modifiedby>Marcus</modifiedby>
+	</module>
+</servicerequest>
+ -->

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="servicerequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="IDLSTrxEntries"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IDLSTrxEntries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="IDLSTrxEntry"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IDLSTrxEntry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transaction"/>
+        <xs:element ref="TrxCredit"/>
+        <xs:element ref="TrxDate"/>
+        <xs:element ref="TrxDebit"/>
+        <xs:element ref="TrxDesc"/>
+        <xs:element ref="TrxIMA_AcctCode"/>
+        <xs:element ref="TrxIMA_AcctNormalBal"/>
+        <xs:element ref="TrxIMA_XAcctCode"/>
+        <xs:element ref="TrxIMA_XAcctNormalBal"/>
+        <xs:element ref="TrxJournal"/>
+        <xs:element ref="TrxRefNo"/>
+        <xs:element ref="TrxTotal"/>
+        <xs:element ref="TrxFrom"/>
+        <xs:element ref="TrxType"/>
+        <xs:element ref="rn"/>
+        <xs:element ref="TrxStartDate"/>
+        <xs:element ref="TrxEndDate"/>
+        <xs:element ref="LastUserCode"/>
+        <xs:element ref="LastUpdate"/>
+        <!--<xs:element ref="TrxInvtType"/>
+      --></xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="TrxCredit" type="xs:NCName"/>
+  <xs:element name="TrxDate" type="xs:NCName"/>
+  <xs:element name="TrxDebit" type="xs:NCName"/>
+  <xs:element name="TrxDesc" type="xs:NCName"/>
+  <xs:element name="TrxIMA_AcctCode" type="xs:NCName"/>
+  <xs:element name="TrxIMA_AcctNormalBal" type="xs:NCName"/>
+  <xs:element name="TrxIMA_XAcctCode" type="xs:NCName"/>
+  <xs:element name="TrxIMA_XAcctNormalBal" type="xs:NCName"/>
+  <xs:element name="TrxJournal" type="xs:NCName"/>
+  <xs:element name="TrxRefNo" type="xs:NCName"/>
+  <xs:element name="TrxTotal" type="xs:NCName"/>
+  <xs:element name="TrxFrom" type="xs:NCName"/>
+  <xs:element name="TrxType" type="xs:NCName"/>
+  <xs:element name="rn" type="xs:NCName"/>
+  <xs:element name="TrxStartDate" type="xs:NCName"/>
+  <xs:element name="TrxEndDate" type="xs:NCName"/>
+  <xs:element name="LastUserCode" type="xs:NCName"/>
+  <xs:element name="LastUpdate" type="xs:NCName"/>
+  <!--<xs:element name="TrxInvtType" type="xs:NCName"/>
+--></xs:schema>

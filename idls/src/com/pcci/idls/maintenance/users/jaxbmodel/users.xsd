@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="servicerequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="user"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="user">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transaction"/>
+        <xs:element ref="userid"/>
+        <xs:element ref="pword"/>
+        <xs:element ref="roleid"/>
+        <xs:element ref="lastname"/>
+        <xs:element ref="firstname"/>
+        <xs:element ref="middlename"/>
+        <xs:element ref="email"/>
+        <xs:element ref="phone"/>
+        <xs:element ref="effectivedate"/>
+        <xs:element ref="expirydate"/>
+        <xs:element ref="pwordeffectivedate"/>
+        <xs:element ref="lastlogon"/>
+        <xs:element ref="lastupdate"/>
+        <xs:element ref="modifiedby"/>
+        <xs:element ref="locked"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type"/>
+        <xs:element ref="sessionid"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="sessionid">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="userid" type="xs:NCName"/>
+  <xs:element name="pword" type="xs:NCName"/>
+  <xs:element name="roleid" type="xs:NCName"/>
+  <xs:element name="lastname" type="xs:NCName"/>
+  <xs:element name="firstname" type="xs:NCName"/>
+  <xs:element name="middlename" type="xs:NCName"/>
+  <xs:element name="email" type="xs:string"/>
+  <xs:element name="phone" type="xs:integer"/>
+  <xs:element name="effectivedate" type="xs:string"/>
+  <xs:element name="expirydate" type="xs:string"/>
+  <xs:element name="pwordeffectivedate" type="xs:string"/>
+  <xs:element name="lastlogon" type="xs:string"/>
+  <xs:element name="lastupdate" type="xs:string"/>
+  <xs:element name="modifiedby" type="xs:NCName"/>
+  <xs:element name="locked" type="xs:integer"/>
+</xs:schema>

@@ -1,0 +1,133 @@
+<!--  
+Table Mapped: IMA_Clients
+Columns
+IMA_ClientID
+IMA_ClientName
+IMA_ClientCode
+LastUserCode
+LastUpdate
+-->
+
+<!-- CREATE -->
+<servicerequest>
+	<ClientService>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_ClientID>Required</IMA_ClientID>
+		<IMA_ClientName>Required</IMA_ClientName>
+		<IMA_ClientCode>Required</IMA_ClientCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</ClientService>
+</servicerequest>
+
+
+<!-- RETRIEVE -->
+<servicerequest>
+	<ClientService>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_ClientID></IMA_ClientID>
+		<IMA_ClientName></IMA_ClientName>
+		<IMA_ClientCode></IMA_ClientCode>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</ClientService>
+</servicerequest>
+<!-- response -->
+<serviceresponse>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<clients>
+			<client>
+				<IMA_ClientID>Some string</IMA_ClientID>
+				<IMA_ClientName>Some string</IMA_ClientName>
+				<IMA_ClientCode>Some string</IMA_ClientCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</client>
+			<client>
+				<IMA_ClientID>Some string</IMA_ClientID>
+				<IMA_ClientName>Some string</IMA_ClientName>
+				<IMA_ClientCode>Some string</IMA_ClientCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</client>
+		</clients>
+</serviceresponse>
+
+<!-- RETRIEVE by client name-->
+<servicerequest>
+	<ClientService>
+		<transaction>
+			<type>read</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_ClientID></IMA_ClientID>
+		<IMA_ClientName>Required</IMA_ClientName>
+		<IMA_ClientCode></IMA_ClientCode>
+		<LastUserCode></LastUserCode>
+		<LastUpdate></LastUpdate>
+	</ClientService>
+</servicerequest>
+<!-- response -->
+<serviceresponse>
+		<transaction>
+			<type>read</type>
+			<sessionid></sessionid>
+		</transaction>
+		<clients>
+			<client>
+				<IMA_ClientID>Some string</IMA_ClientID>
+				<IMA_ClientName>Some string</IMA_ClientName>
+				<IMA_ClientCode>Some string</IMA_ClientCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</client>
+			<client>
+				<IMA_ClientID>Some string</IMA_ClientID>
+				<IMA_ClientName>Some string</IMA_ClientName>
+				<IMA_ClientCode>Some string</IMA_ClientCode>
+				<LastUserCode>Some string</LastUserCode>
+				<LastUpdate>Some string</LastUpdate>
+			</client>
+		</clients>
+</serviceresponse>
+
+
+
+<!-- UPDATE -->
+<servicerequest>
+	<ClientService>
+		<transaction>
+			<type>update</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_ClientID>Required</IMA_ClientID>
+		<IMA_ClientName>Required</IMA_ClientName>
+		<IMA_ClientCode>Required</IMA_ClientCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</ClientService>
+</servicerequest>
+
+<!-- DELETE -->
+<servicerequest>
+	<ClientService>
+		<transaction>
+			<type>delete</type>
+			<sessionid></sessionid>
+		</transaction>
+		<IMA_ClientID>Required</IMA_ClientID>
+		<IMA_ClientName></IMA_ClientName>
+		<IMA_ClientCode></IMA_ClientCode>
+		<LastUserCode>Required</LastUserCode>
+		<LastUpdate>Required</LastUpdate>
+	</ClientService>
+</servicerequest>

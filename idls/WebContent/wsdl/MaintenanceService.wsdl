@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.main.idls.pcci.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.main.idls.pcci.com" xmlns:intf="http://service.main.idls.pcci.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.main.idls.pcci.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getModuleService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getModuleServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getModuleServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRoleModuleService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getRoleModuleServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getRoleModuleServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUsersServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getUsersServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getIDLSTrxService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getIDLSTrxServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getIDLSTrxServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getClientService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getClientServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getClientServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAccountService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAccountServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getAccountServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSecurityTypeService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSecurityTypeServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getSecurityTypeServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInvestmentTypeService">
+    <complexType>
+     <sequence>
+      <element name="request" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInvestmentTypeServiceResponse">
+    <complexType>
+     <sequence>
+      <element name="getInvestmentTypeServiceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getIDLSTrxServiceResponse">
+
+      <wsdl:part element="impl:getIDLSTrxServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSecurityTypeServiceResponse">
+
+      <wsdl:part element="impl:getSecurityTypeServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersServiceResponse">
+
+      <wsdl:part element="impl:getUsersServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAccountServiceRequest">
+
+      <wsdl:part element="impl:getAccountService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInvestmentTypeServiceResponse">
+
+      <wsdl:part element="impl:getInvestmentTypeServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSecurityTypeServiceRequest">
+
+      <wsdl:part element="impl:getSecurityTypeService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getModuleServiceResponse">
+
+      <wsdl:part element="impl:getModuleServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInvestmentTypeServiceRequest">
+
+      <wsdl:part element="impl:getInvestmentTypeService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClientServiceRequest">
+
+      <wsdl:part element="impl:getClientService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUsersServiceRequest">
+
+      <wsdl:part element="impl:getUsersService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAccountServiceResponse">
+
+      <wsdl:part element="impl:getAccountServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getModuleServiceRequest">
+
+      <wsdl:part element="impl:getModuleService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRoleModuleServiceResponse">
+
+      <wsdl:part element="impl:getRoleModuleServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getClientServiceResponse">
+
+      <wsdl:part element="impl:getClientServiceResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getRoleModuleServiceRequest">
+
+      <wsdl:part element="impl:getRoleModuleService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getIDLSTrxServiceRequest">
+
+      <wsdl:part element="impl:getIDLSTrxService" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="MaintenanceService">
+
+      <wsdl:operation name="getModuleService">
+
+         <wsdl:input message="impl:getModuleServiceRequest" name="getModuleServiceRequest"/>
+
+         <wsdl:output message="impl:getModuleServiceResponse" name="getModuleServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRoleModuleService">
+
+         <wsdl:input message="impl:getRoleModuleServiceRequest" name="getRoleModuleServiceRequest"/>
+
+         <wsdl:output message="impl:getRoleModuleServiceResponse" name="getRoleModuleServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersService">
+
+         <wsdl:input message="impl:getUsersServiceRequest" name="getUsersServiceRequest"/>
+
+         <wsdl:output message="impl:getUsersServiceResponse" name="getUsersServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIDLSTrxService">
+
+         <wsdl:input message="impl:getIDLSTrxServiceRequest" name="getIDLSTrxServiceRequest"/>
+
+         <wsdl:output message="impl:getIDLSTrxServiceResponse" name="getIDLSTrxServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getClientService">
+
+         <wsdl:input message="impl:getClientServiceRequest" name="getClientServiceRequest"/>
+
+         <wsdl:output message="impl:getClientServiceResponse" name="getClientServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAccountService">
+
+         <wsdl:input message="impl:getAccountServiceRequest" name="getAccountServiceRequest"/>
+
+         <wsdl:output message="impl:getAccountServiceResponse" name="getAccountServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSecurityTypeService">
+
+         <wsdl:input message="impl:getSecurityTypeServiceRequest" name="getSecurityTypeServiceRequest"/>
+
+         <wsdl:output message="impl:getSecurityTypeServiceResponse" name="getSecurityTypeServiceResponse"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInvestmentTypeService">
+
+         <wsdl:input message="impl:getInvestmentTypeServiceRequest" name="getInvestmentTypeServiceRequest"/>
+
+         <wsdl:output message="impl:getInvestmentTypeServiceResponse" name="getInvestmentTypeServiceResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="MaintenanceServiceSoapBinding" type="impl:MaintenanceService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getModuleService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getModuleServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getModuleServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getRoleModuleService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getRoleModuleServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getRoleModuleServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getUsersService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUsersServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUsersServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getIDLSTrxService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getIDLSTrxServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getIDLSTrxServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getClientService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getClientServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getClientServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAccountService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAccountServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAccountServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSecurityTypeService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSecurityTypeServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSecurityTypeServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInvestmentTypeService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInvestmentTypeServiceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInvestmentTypeServiceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="MaintenanceServiceService">
+
+      <wsdl:port binding="impl:MaintenanceServiceSoapBinding" name="MaintenanceService">
+
+         <wsdlsoap:address location="http://192.168.0.206:8080/idls/services/MaintenanceService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

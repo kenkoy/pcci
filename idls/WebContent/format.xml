@@ -1,0 +1,7 @@
+<serviceresponse>
+	<error>
+		<code>FileNotFound</code>
+		<message>Unable to locate config file</message>
+	</error>
+</serviceresponse>
+

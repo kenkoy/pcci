@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.main.idls.pcci.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.main.idls.pcci.com" xmlns:intf="http://service.main.idls.pcci.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="authenticateUserRequest">
+
+      <wsdl:part name="request" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="authenticateUserResponse">
+
+      <wsdl:part name="authenticateUserReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="LoginService">
+
+      <wsdl:operation name="authenticateUser" parameterOrder="request">
+
+         <wsdl:input message="impl:authenticateUserRequest" name="authenticateUserRequest"/>
+
+         <wsdl:output message="impl:authenticateUserResponse" name="authenticateUserResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="LoginServiceSoapBinding" type="impl:LoginService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="authenticateUser">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="authenticateUserRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://service.main.idls.pcci.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="authenticateUserResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://service.main.idls.pcci.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="LoginServiceService">
+
+      <wsdl:port binding="impl:LoginServiceSoapBinding" name="LoginService">
+
+         <wsdlsoap:address location="http://192.168.0.206:8080/idls/services/LoginService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

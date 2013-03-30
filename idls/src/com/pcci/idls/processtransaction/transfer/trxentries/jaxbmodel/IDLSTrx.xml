@@ -1,0 +1,128 @@
+<!-- READ ALL REQUEST -->
+<!-- 
+<servicerequest>
+	<IDLSTrxEntries>
+		<transaction>
+			<type>readall</type>
+			<sessionid></sessionid>
+		</transaction>
+		<TrxFrom>IDLS</TrxFrom>
+		<TrxType>ALL</TrxType>
+		<TrxStartDate>01/06/2012</TrxStartDate>
+		<TrxEndDate>02/21/2012</TrxEndDate>
+	</IDLSTrxEntries>
+</servicerequest>
+MM/DD/YYY
+-->
+
+
+<!-- CREATE REQUEST -->
+<servicerequest>
+	<IDLSTrxEntries>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<TrxCredit>12345678</TrxCredit>
+		<TrxDate>02/20/2012</TrxDate>
+		<TrxDebit>.0000</TrxDebit>
+		<TrxDesc>Test 1</TrxDesc>
+		<TrxIMA_AcctCode>ASE</TrxIMA_AcctCode>
+		<TrxIMA_AcctNormalBal>Debit</TrxIMA_AcctNormalBal>
+		<TrxIMA_XAcctCode>JV2012-02-20</TrxIMA_XAcctCode>
+		<TrxIMA_XAcctNormalBal>debit</TrxIMA_XAcctNormalBal>
+		<TrxJournal>JV20120220</TrxJournal>
+		<TrxRefNo>022280</TrxRefNo>
+		<TrxTotal>NULL</TrxTotal>
+		<TrxFrom>IDLS</TrxFrom>
+		<TrxType>AE</TrxType>
+		<TrxInvtType>LR</TrxInvtType>
+	</IDLSTrxEntries>
+</servicerequest>
+
+
+
+
+
+<!-- All Transaction Request -->
+<servicerequest>
+	<IDLSTrxEntries>
+		<IDLSTrxEntry>
+			<transaction>
+				<type>ABC</type>
+			</transaction>
+			<TrxCredit>ABC</TrxCredit>
+			<TrxDate>ABC</TrxDate>
+			<TrxDebit>ABC</TrxDebit>
+			<TrxDesc>ABC</TrxDesc>
+			<TrxIMA_AcctCode>ABC</TrxIMA_AcctCode>
+			<TrxIMA_AcctNormalBal>ABC</TrxIMA_AcctNormalBal>
+			<TrxIMA_XAcctCode>ABC</TrxIMA_XAcctCode>
+			<TrxIMA_XAcctNormalBal>ABC</TrxIMA_XAcctNormalBal>
+			<TrxJournal>ABC</TrxJournal>
+			<TrxRefNo>ABC</TrxRefNo>
+			<TrxTotal>ABC</TrxTotal>
+			<TrxFrom>ABC</TrxFrom>
+			<TrxType>ABC</TrxType>
+			<TrxInvtType>ABC</TrxInvtType>
+			<rn>ABC</rn>
+			<TrxStartDate>ABC</TrxStartDate>
+			<TrxEndDate>ABC</TrxEndDate>
+		</IDLSTrxEntry>
+		<IDLSTrxEntry>
+			<transaction>
+				<type>ABC</type>
+			</transaction>
+			<TrxCredit>ABC</TrxCredit>
+			<TrxDate>ABC</TrxDate>
+			<TrxDebit>ABC</TrxDebit>
+			<TrxDesc>ABC</TrxDesc>
+			<TrxIMA_AcctCode>ABC</TrxIMA_AcctCode>
+			<TrxIMA_AcctNormalBal>ABC</TrxIMA_AcctNormalBal>
+			<TrxIMA_XAcctCode>ABC</TrxIMA_XAcctCode>
+			<TrxIMA_XAcctNormalBal>ABC</TrxIMA_XAcctNormalBal>
+			<TrxJournal>ABC</TrxJournal>
+			<TrxRefNo>ABC</TrxRefNo>
+			<TrxTotal>ABC</TrxTotal>
+			<TrxFrom>ABC</TrxFrom>
+			<TrxType>ABC</TrxType>
+			<TrxInvtType>ABC</TrxInvtType>
+			<rn>ABC</rn>
+			<TrxStartDate>ABC</TrxStartDate>
+			<TrxEndDate>ABC</TrxEndDate>		
+		</IDLSTrxEntry>
+		<IDLSTrxEntry>
+			<transaction>
+				<type>ABC</type>
+			</transaction>
+			<TrxCredit>ABC</TrxCredit>
+			<TrxDate>ABC</TrxDate>
+			<TrxDebit>ABC</TrxDebit>
+			<TrxDesc>ABC</TrxDesc>
+			<TrxIMA_AcctCode>ABC</TrxIMA_AcctCode>
+			<TrxIMA_AcctNormalBal>ABC</TrxIMA_AcctNormalBal>
+			<TrxIMA_XAcctCode>ABC</TrxIMA_XAcctCode>
+			<TrxIMA_XAcctNormalBal>ABC</TrxIMA_XAcctNormalBal>
+			<TrxJournal>ABC</TrxJournal>
+			<TrxRefNo>ABC</TrxRefNo>
+			<TrxTotal>ABC</TrxTotal>
+			<TrxFrom>ABC</TrxFrom>
+			<TrxType>ABC</TrxType>
+			<TrxInvtType>ABC</TrxInvtType>
+			<rn>ABC</rn>
+			<TrxStartDate>ABC</TrxStartDate>
+			<TrxEndDate>ABC</TrxEndDate>			
+		</IDLSTrxEntry>
+	</IDLSTrxEntries>
+</servicerequest>
+
+
+
+
+
+
+
+
+
+
+

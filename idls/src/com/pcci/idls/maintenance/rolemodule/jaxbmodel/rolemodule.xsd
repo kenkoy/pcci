@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="servicerequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="roles"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="roles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="transaction"/>
+        <xs:element maxOccurs="unbounded" ref="role"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="transaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="type"/>
+        <xs:element ref="sessionid"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="type" type="xs:NCName"/>
+  <xs:element name="sessionid">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="role">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="modules"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="modules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="module"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="module">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="id"/>
+        <xs:element ref="description"/>
+        <xs:element ref="effectivedate"/>
+        <xs:element ref="expirydate"/>
+        <xs:element ref="createaccess"/>
+        <xs:element ref="readaccess"/>
+        <xs:element ref="updateaccess"/>
+        <xs:element ref="deleteaccess"/>
+        <xs:element ref="lastupdate"/>
+        <xs:element ref="modifiedby"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="effectivedate" type="xs:NCName"/>
+  <xs:element name="expirydate" type="xs:NCName"/>
+  <xs:element name="createaccess" type="xs:NCName"/>
+  <xs:element name="readaccess" type="xs:NCName"/>
+  <xs:element name="updateaccess" type="xs:NCName"/>
+  <xs:element name="deleteaccess" type="xs:NCName"/>
+  <xs:element name="lastupdate" type="xs:NCName"/>
+  <xs:element name="modifiedby" type="xs:NCName"/>
+  <xs:element name="id" type="xs:NCName"/>
+</xs:schema>

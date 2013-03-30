@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank A4" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="dcc1b595-d8f0-47ab-8f73-fae9cbb2de6b">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="trxCredit" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[trxCredit]]></fieldDescription>
+	</field>
+	<field name="trxDate" class="java.util.Date">
+		<fieldDescription><![CDATA[trxDate]]></fieldDescription>
+	</field>
+	<field name="trxDebit" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[trxDebit]]></fieldDescription>
+	</field>
+	<field name="trxDesc" class="java.lang.String">
+		<fieldDescription><![CDATA[trxDesc]]></fieldDescription>
+	</field>
+	<field name="trxIMA_AcctCode" class="java.lang.String">
+		<fieldDescription><![CDATA[trxIMA_AcctCode]]></fieldDescription>
+	</field>
+	<field name="trxRefNo" class="java.lang.String">
+		<fieldDescription><![CDATA[trxRefNo]]></fieldDescription>
+	</field>
+	<field name="trxType" class="java.lang.String">
+		<fieldDescription><![CDATA[trxType]]></fieldDescription>
+	</field>
+	<group name="trxRefNo">
+		<groupExpression><![CDATA[$F{trxRefNo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

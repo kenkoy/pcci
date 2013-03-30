@@ -1,0 +1,55 @@
+<servicerequest>
+	<user>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<userid>marcus</userid>
+		<pword>password</pword>
+		<roleid>admin</roleid>
+		<lastname>estole</lastname>
+		<firstname>marcus</firstname>
+		<middlename>mendoza</middlename>
+		<email>marcus@gmail.com</email>
+		<phone>12345678</phone>
+		<effectivedate>11/14/2011</effectivedate>
+		<expirydate>11/14/2011</expirydate>
+		<pwordeffectivedate>11/14/2011</pwordeffectivedate>
+		<lastlogon>11/14/2011</lastlogon>
+		<lastupdate>11/14/2011</lastupdate>
+		<modifiedby>marcus</modifiedby>
+		<locked>0</locked>
+	</user>
+</servicerequest>
+
+<!-- 
+<serviceresponse>
+	<status>
+		<code></code>
+		<message></message>
+	</status>
+	<users>
+		<transaction>
+			<type></type>
+			<sessionid></sessionid>
+		</transaction>
+		<user>
+			<userid>marcus</userid>
+			<pword>password</pword>
+			<roleid>admin</roleid>
+			<lastname>estole</lastname>
+			<firstname>marcus</firstname>
+			<middlename>mendoza</middlename>
+			<email>marcus@gmail.com</email>
+			<phone>12345678</phone>
+			<effectivedate>11/14/2011</effectivedate>
+			<expirydate>11/14/2011</expirydate>
+			<pwordeffectivedate>11/14/2011</pwordeffectivedate>
+			<lastlogon>11/14/2011</lastlogon>
+			<lastupdate>11/14/2011</lastupdate>
+			<modifiedby>marcus</modifiedby>
+			<locked>0</locked>
+		</user>
+	</users>
+</serviceresponse>
+-->	

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.main.idls.pcci.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.main.idls.pcci.com" xmlns:intf="http://service.main.idls.pcci.com" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+
+   <wsdl:message name="getConfigServiceRequest">
+
+      <wsdl:part name="request" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getConfigServiceResponse">
+
+      <wsdl:part name="getConfigServiceReturn" type="xsd:string"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ConfigurationService">
+
+      <wsdl:operation name="getConfigService" parameterOrder="request">
+
+         <wsdl:input message="impl:getConfigServiceRequest" name="getConfigServiceRequest"/>
+
+         <wsdl:output message="impl:getConfigServiceResponse" name="getConfigServiceResponse"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ConfigurationServiceSoapBinding" type="impl:ConfigurationService">
+
+      <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getConfigService">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getConfigServiceRequest">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://service.main.idls.pcci.com" use="encoded"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getConfigServiceResponse">
+
+            <wsdlsoap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://service.main.idls.pcci.com" use="encoded"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ConfigurationServiceService">
+
+      <wsdl:port binding="impl:ConfigurationServiceSoapBinding" name="ConfigurationService">
+
+         <wsdlsoap:address location="http://192.168.0.206:8080/idls/services/ConfigurationService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

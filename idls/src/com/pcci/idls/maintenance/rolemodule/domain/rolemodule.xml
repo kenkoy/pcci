@@ -1,0 +1,137 @@
+<servicerequest>
+	<roles>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<role>
+			<id>admin</id>
+			<modules>
+				<module>
+					<id>USER_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>abc</effectivedate>
+					<expirydate>abc</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+				<module>
+					<id>ACCOUNT_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>abc</effectivedate>
+					<expirydate>abc</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+			</modules>
+		</role>
+		<role>
+			<id>user</id>
+			<modules>
+				<module>
+					<id>USER_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>abc</effectivedate>
+					<expirydate>abc</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+				<module>
+					<id>ACCOUNT_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>abc</effectivedate>
+					<expirydate>abc</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+			</modules>
+		</role>
+	</roles>
+</servicerequest>
+<!-- 
+<serviceresponse>
+	<roles>
+		<transaction>
+			<type>create</type>
+			<sessionid></sessionid>
+		</transaction>
+		<role>
+			<id>admin</id>
+			<modules>
+				<module>
+					<id>USER_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>11/13/2011</effectivedate>
+					<expirydate>11/13/2012</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+				<module>
+					<id>ACCOUNT_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>11/13/2011</effectivedate>
+					<expirydate>11/13/2012</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+			</modules>
+		</role>
+		<role>
+			<id>user</id>
+			<modules>
+				<module>
+					<id>USER_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>11/13/2011</effectivedate>
+					<expirydate>11/13/2012</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+				<module>
+					<id>ACCOUNT_MAINTENANCE</id>
+					<description>User data maintenance</description>
+					<effectivedate>11/13/2011</effectivedate>
+					<expirydate>11/13/2012</expirydate>
+					<createaccess>abc</createaccess>
+					<readaccess>abc</readaccess>
+					<updateaccess>abc</updateaccess>
+					<deleteaccess>abc</deleteaccess>
+					<lastupdate>abc</lastupdate>
+					<modifiedby>Marcus</modifiedby>
+				</module>
+			</modules>
+		</role>
+	</roles>
+</serviceresponse>
+
+
+
+ -->

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from MaintenanceServiceService WSDL service -->
+
+  <service name="MaintenanceService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.main.idls.pcci.com"/>
+      <parameter name="wsdlServiceElement" value="MaintenanceServiceService"/>
+      <parameter name="schemaQualified" value="http://service.main.idls.pcci.com"/>
+      <parameter name="wsdlServicePort" value="MaintenanceService"/>
+      <parameter name="className" value="com.pcci.idls.main.service.MaintenanceService"/>
+      <parameter name="wsdlPortType" value="MaintenanceService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getModuleService" qname="operNS:getModuleService" returnQName="retNS:getModuleServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getRoleModuleService" qname="operNS:getRoleModuleService" returnQName="retNS:getRoleModuleServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUsersService" qname="operNS:getUsersService" returnQName="retNS:getUsersServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getIDLSTrxService" qname="operNS:getIDLSTrxService" returnQName="retNS:getIDLSTrxServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getClientService" qname="operNS:getClientService" returnQName="retNS:getClientServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAccountService" qname="operNS:getAccountService" returnQName="retNS:getAccountServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getSecurityTypeService" qname="operNS:getSecurityTypeService" returnQName="retNS:getSecurityTypeServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:retNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getInvestmentTypeService" qname="operNS:getInvestmentTypeService" returnQName="retNS:getInvestmentTypeServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.main.idls.pcci.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:request" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getInvestmentTypeService getUsersService getIDLSTrxService getRoleModuleService getClientService getSecurityTypeService getAccountService getModuleService"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ConfigurationServiceService WSDL service -->
+
+  <service name="ConfigurationService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://service.main.idls.pcci.com"/>
+      <parameter name="wsdlServiceElement" value="ConfigurationServiceService"/>
+      <parameter name="wsdlServicePort" value="ConfigurationService"/>
+      <parameter name="className" value="com.pcci.idls.main.service.ConfigurationService"/>
+      <parameter name="wsdlPortType" value="ConfigurationService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.main.idls.pcci.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getConfigService" qname="operNS:getConfigService" returnQName="getConfigServiceReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="request" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getConfigService"/>
+
+  </service>
+</deployment>

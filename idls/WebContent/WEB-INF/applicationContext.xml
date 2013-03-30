@@ -1,0 +1,67 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-2.5.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+    <!-- <context:component-scan base-package="com.pcci.idls.maintenance.module.service" /> -->
+
+    <context:annotation-config />
+
+    <tx:annotation-driven />
+
+	<bean id="ModuleService" class="com.pcci.idls.maintenance.module.service.ModuleServiceImpl" />
+	<bean id="RoleModuleService" class="com.pcci.idls.maintenance.rolemodule.service.RoleModuleServiceImpl" />
+	
+	<bean id="UsersService" class="com.pcci.idls.maintenance.users.service.UsersServiceImpl" />
+	<bean id="UsersPwService" class="com.pcci.idls.maintenance.userspw.service.UsersPwServiceImpl" />
+	
+	<bean id="IDLSTrxEntriesService" class="com.pcci.idls.processtransaction.transfer.trxentries.service.IDLSTrxEntriesServiceImpl" />
+	<bean id="IFMSTrxEntriesService" class="com.pcci.idls.processtransaction.transfer.trxentries.service.IFMSTrxEntriesServiceImpl" />
+
+	<bean id="AccountService" class="com.pcci.idls.maintenance.account.service.AccountServiceImpl" />
+	<bean id="ClientService" class="com.pcci.idls.maintenance.client.service.ClientServiceImpl" />
+	<bean id="InvestmentTypeService" class="com.pcci.idls.maintenance.investmenttype.service.InvestmentTypeServiceImpl" />
+	<bean id="SecurityTypeService" class="com.pcci.idls.maintenance.securitytype.service.SecurityTypeServiceImpl" />
+
+	<bean id="userBo" class="com.pcci.idls.report.model.UserBoImpl">
+		<property name="name" value="marcus" />
+	</bean>
+
+    <bean id="dataSource"
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+            value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <property name="url"
+        	value="jdbc:sqlserver://192.168.100.10:1433;databaseName=TMS_DataLink" />
+        <property name="username" value="sa" />
+        <property name="password" value="" />
+    </bean>
+
+    <bean id="entityManagerFactory"
+        class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="idls" />
+        <property name="dataSource" ref="dataSource" />
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+                <property name="databasePlatform"
+                    value="org.hibernate.dialect.SQLServerDialect" />
+                <property name="showSql" value="true" />
+                <property name="generateDdl" value="true" />    
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="transactionManager"
+        class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+</beans>

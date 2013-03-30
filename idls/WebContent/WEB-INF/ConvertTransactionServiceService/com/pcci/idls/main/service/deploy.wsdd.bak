@@ -1,0 +1,29 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ConvertTransactionServiceService WSDL service -->
+
+  <service name="ConvertTransactionService" provider="java:RPC" style="rpc" use="encoded">
+      <parameter name="wsdlTargetNamespace" value="http://service.main.idls.pcci.com"/>
+      <parameter name="wsdlServiceElement" value="ConvertTransactionServiceService"/>
+      <parameter name="wsdlServicePort" value="ConvertTransactionService"/>
+      <parameter name="className" value="com.pcci.idls.main.service.ConvertTransactionServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ConvertTransactionService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="convertDataToNV2" qname="operNS:convertDataToNV2" xmlns:operNS="http://service.main.idls.pcci.com" returnQName="convertDataToNV2Return" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="startDate" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="endDate" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="convertDataToNV2"/>
+
+  </service>
+</deployment>
